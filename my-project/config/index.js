@@ -10,7 +10,24 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    proxyTable: {
+          '/restapi/': {
+              target: 'https://h5.ele.me',
+              host: 'www.ele.me',
+              changeOrigin:true,
+              // pathRewrite: {
+              //     '^/v4/api': '/v4/api'
+              //   }
+          },
+          '/newretail/': {
+              target: 'https://newretail.ele.me',
+              host: 'www.ele.me',
+              changeOrigin:true,
+              // pathRewrite: {
+              //     '^/v4/api': '/v4/api'
+              //   }
+          }          
+    },
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
@@ -23,7 +40,7 @@ module.exports = {
     // Use Eslint Loader?
     // If true, your code will be linted during bundling and
     // linting errors and warnings will be shown in the console.
-    useEslint: true,
+    useEslint: false,
     // If true, eslint errors and warnings will also be shown in the error overlay
     // in the browser.
     showEslintErrorsInOverlay: false,
