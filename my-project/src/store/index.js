@@ -19,7 +19,7 @@ const store = new Vuex.Store({
 
 			axios.get("/restapi/shopping/v3/restaurants?latitude=29.534893&longitude=106.489478&offset=0&limit=8&extras[]=activities&extras[]=tags&extra_filters=home&rank_id=&terminal=h5").then(res=>{
 				//提交给mutation 改变状态
-				console.log(res.data.items);
+				//console.log(res.data.items);
 				store.commit("changeComingsoonList",res.data.items);
 			})
 		}
